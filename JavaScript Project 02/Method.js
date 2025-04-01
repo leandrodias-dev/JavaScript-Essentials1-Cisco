@@ -1,0 +1,12 @@
+// Um método é um tipo especial de função que pertence a um objeto. Objetos são tipos de dados complexos, que podem consistir em muitos valores (armazenados em propriedades) e métodos. Se quiser chamar o método de um objeto, escreva o nome do método após um ponto. Isso te lembra alguma coisa? Esta é exatamente a notação que você usa ao chamar console.log. O objeto console possui muitos outros métodos além do log método, como time e timeEnd do tempo(que pode ser usado para medir o tempo)
+console.time();
+console.log("test console"); // -> test console
+console.timeEnd(); // -> default: 0.108154296875 ms
+
+//Todos os dados de tipos primitivos como Number, BigInt, Boolean ou String possuem objetos correspondentes nos quais podem ser convertidos. Cada um desses objetos terá métodos projetados para um tipo de dados específico. Neste ponto chegamos a outro conceito, ou seja, autoboxing . Se um ponto aparecer após um literal representando um tipo primitivo, ou após uma variável contendo este tipo de dados, o interpretador JavaScript tenta tratar este valor como um objeto e não como um primitivo. Para isso, ele converte instantaneamente a primitiva no objeto correspondente, que possui os métodos apropriados (ou seja, executa autoboxing). Um pouco confuso, não é? Felizmente, para usar métodos, não precisamos entendê-los exatamente – basta seguir a convenção dada.
+
+let river = "Mekong";
+let character = river.charAt(2);
+console.log(character); // -> k
+
+// Na variável raver, armazenamos o primitivo de um tipo String. Na próxima linha, nos referimos a esta variável, escrevendo um ponto após seu nome e o nome de um dos métodos –charAt(um método do objeto da classe String). Embora a primitiva não possua métodos que possam ser chamados, o interpretador converte temporariamente esse valor em um objeto adequado que já possua tais métodos. Um desses métodos écharAt, que agora chamamos. O método opera em uma string originalmente colocada na variável river e retorna uma única letra da posição especificada (as letras são contadas a partir de 0). Após a conclusão da operação, o intérprete remove o objeto temporário. Então, do nosso ponto de vista, parece que acabamos de chamar um método em um determinado tipo primitivo.
